@@ -1,0 +1,2 @@
+class Slogan < ApplicationRecord
+end
