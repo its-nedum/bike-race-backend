@@ -54,13 +54,14 @@ module Api
                         message: 'Slogan updated',
                         data: slogan},
                         status: :ok
-                    else 
-                        render json: {
-                            status: 'Success',
-                            message: 'Slogan not updated',
-                            data: slogan},
-                            status: :unprocessable_entity
-
+                else 
+                    render json: {
+                        status: 'Success',
+                        message: 'Slogan not updated',
+                        data: slogan},
+                        status: :unprocessable_entity
+                end
+            end
 
             private
 
