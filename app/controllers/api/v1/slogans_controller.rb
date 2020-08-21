@@ -63,9 +63,7 @@ module Api
                 end
             end
 
-            private
-
-            def slogan_params
+            private def slogan_params
                 params.permit(:firstname, :lastname, :email, :slogan)
             end
         end
