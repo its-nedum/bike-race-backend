@@ -2,7 +2,7 @@ module Api
     module V1
         class SlogansController < ApplicationController
             def index
-                slogans = Slogan.order('created_at DESC');
+                slogans = Slogan.order('id ASC');
                 render json: {
                     status: 'Success',
                     message: 'Loaded slogans',
