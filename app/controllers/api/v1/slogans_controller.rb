@@ -21,18 +21,27 @@ module Api
 
             def create
                 slogan = Slogan.new(slogan_params)
-                if slogan.save
+                #check if the user with email address has submitted
+                if Slogan.exists?(:email => slogan.email)
                     render json: {
-                        status: 'Success',
-                        message: 'Saved slogan',
+                        status: 'Warning',
+                        message: 'Record already exists',
                         data: slogan},
                         status: :ok
-                else 
-                    render json: {
-                        status: 'Success',
-                        message: 'Slogan not saved',
-                        data: slogan.errors},
-                        status: :unprocessable_entity
+                else
+                    if slogan.save
+                        render json: {
+                            status: 'Success',
+                            message: 'Submission saved',
+                            data: slogan},
+                            status: :ok
+                    else 
+                        render json: {
+                            status: 'Error',
+                            message: 'Submission not saved',
+                            data: slogan.errors},
+                            status: :unprocessable_entity
+                    end
                 end
             end
 
