@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  firstname: 'Jane'
-  lastname: 'Doe'
-  email: 'janedoe@example.com'
-  slogan: 'Jane doe's slogan submission'
+  firstname: MyString
+  lastname: MyString
+  email: MyString
+  slogan: MyText
 
 two:
-  firstname: 'John'
-  lastname: 'Doe'
-  email: 'johndoe@example.com'
-  slogan: 'John doe's slogan submission'
+  firstname: MyString
+  lastname: MyString
+  email: MyString
+  slogan: MyText
