@@ -6,22 +6,6 @@ module Api
     module V1
         class SlogansControllerTest < ActionDispatch::IntegrationTest
 
-            test 'should return all submitted slogan' do
-                # make a get a request
-                get api_v1_slogans_path
-
-                # the endpoint response must include data object
-                assert_includes(@response.body, 'data')
-
-                # get the status code from the response
-               code = JSON.parse(@response.body)['code']
-
-                # ensure that the status code is equal to 201 :Created
-               assert_equal(code, 200)
-               
-               assert_response :success
-            end
-
             test 'should create a slogan when all params are provided' do
                 # prepare the slogan parameter
                slogan_params = {
