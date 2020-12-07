@@ -1,24 +1,76 @@
-# README
+# Boulder Bike Tour - API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Rails API for slogan submission for the prestigious bike racing competition (Boulder Bike Tour) and also project 7 of Openclassrooms full-stack developer path.
 
-Things you may want to cover:
+* Frontend app: [https://github.com/its-nedum/bike-race-frontend](https://github.com/its-nedum/bike-race-frontend)
 
-* Ruby version
+## Demo Link
+Access the site at [Boulder Bike Tour](https://boulderbike-tour.herokuapp.com)
 
-* System dependencies
+## Features
+- Submit a slogan
+- View slogans
 
-* Configuration
+## Installation
 
-* Database creation
+Clone repo to your local machine:
 
-* Database initialization
+```git
+git clone https://github.com/its-nedum/bike-race-backend.git
+```
+move into project folder
+```
+cd bike-race-backend
+```
 
-* How to run the test suite
+### Install dependencies and run locally
 
-* Services (job queues, cache servers, search engines, etc.)
+install GemFile
+```
+    bundle install
+```
 
-* Deployment instructions
+Create Slogan table
+```
+    rails db:migrate
+```
 
-* ...
+Now start the rails server:
+
+```
+    rails s
+```
+
+## API Routes
+<table>
+	<tr>
+		<th>HTTP VERB</th>
+		<th>ENDPOINT</th>
+		<th>FUNCTIONALITY</th>
+	</tr>
+    <tr>
+        <td>POST</td>
+        <td>/api/v1/slogans</td>
+        <td>Submit a slogan</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td>/api/v1/slogans</td>
+        <td>Return all submitted slogans</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td>/api/v1/slogans/:id</td>
+        <td>Return a single slogan</td>
+    </tr>
+    <tr>
+        <td>DELETE</td>
+        <td>/api/v1/slogans/:id</td>
+        <td>Delete a slogan</td>
+    </tr>
+    <tr>
+        <td>PATCH / PUT</td>
+        <td>/api/v1/slogans/:id</td>
+        <td>Update a slogan</td>
+    </tr>
+</table>
